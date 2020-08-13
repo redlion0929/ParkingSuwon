@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=62xyh25x7q&submodules=geocoder"></script> 
+     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+   
+   <div class="top">
+        <div class="content">
+            제목
+        </div>
+   </div>
+    <form class="addressForm">
+        <input type="text" class="inputAddress" placeholder="주소를 입력하세요">
+    </form>
+     <div id="map"></div>
+     
+     <input type="button" class="getPosition" value="내 위치">
+    
+    <script src="map.js"></script>
+    
+    <script src="getMyPosition.js"></script>
+    
+    <script src="searchAddress.js"></script>
+    
+    <script src="parkingLotInfo.js"></script>
+    
+    <script src="init.js"></script>
+</body>
+</html>
