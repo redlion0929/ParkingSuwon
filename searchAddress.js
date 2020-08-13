@@ -34,7 +34,7 @@ function searchAddressToCoordinate(address) {
 
     infoWindow.setContent([
       '<div style="padding:10px;min-width:100px;line-height:100%;">',
-      '<h5 style="margin-top:5px;">내 위치</h5></div>'
+      '<h5 style="margin-top:5px;"></h5></div>'
     ].join('\n'));
       
     map.setCenter(point);
