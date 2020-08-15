@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=62xyh25x7q&submodules=geocoder"></script> 
      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=4c604eaec6da2259db5c5cbcbd826b63&libraries=services"></script>
 </head>
 <body>
    
@@ -30,6 +31,27 @@
     
     <script src="init.js"></script>
 
-    <a href="1.html">ㄴㄴ</a>
+    <script>  var ps = new kakao.maps.services.Places(); 
+
+        ps.keywordSearch('수원역', placesSearchCB); 
+        
+       
+        function placesSearchCB (data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+        
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                // LatLngBounds 객체에 좌표를 추가합니다
+                var bounds = new kakao.maps.LatLngBounds();
+                
+                console.log(data);
+                for (var i=0; i<data.length; i++) {
+                    displayMarker(data[i]);    
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }       
+        
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+                map.setBounds(bounds);
+            } 
+        }</script>
 </body>
 </html>
