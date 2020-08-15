@@ -14,7 +14,7 @@
 .top {
     background-color: black;
     color:white;
-    position:absolute; //기존 fixed를 absolute로 변환
+    position:absolute; 
     left:0;
     top:0;
     height:40px;
