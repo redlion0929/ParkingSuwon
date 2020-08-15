@@ -30,18 +30,17 @@
     <script src="parkingLotInfo.js"></script>
     
     <script src="init.js"></script>
-
     <script>          var $window = $(window);
 
-function getMapSize() {
-    var size = new naver.maps.Size($window.width(), $window.height()-50);
-
-    return size;
-};
-
-$window.on('resize', function() {
-    map.setSize(getMapSize());
-});
-        </script>
+        function getMapSize() {
+            var size = new naver.maps.Size($window.width(), $window.height()-50);
+        
+            return size;
+        };
+        
+        $window.on('resize', function() {
+            map.setSize(getMapSize());
+        });
+                </script>
 </body>
 </html>
