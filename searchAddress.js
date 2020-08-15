@@ -30,12 +30,9 @@ function searchAddressToCoordinate(address) {
     var htmlAddresses = [],
       item = response.v2.addresses[0],
       point = new naver.maps.Point(item.x, item.y);
+      console.log
 
-
-    infoWindow.setContent([
-      '<div style="padding:10px;min-width:100px;line-height:100%;">',
-      '<h5 style="margin-top:5px;"></h5></div>'
-    ].join('\n'));
+    showMarker(point.x,point.y);
       
     map.setCenter(point);
     infoWindow.open(map, point);

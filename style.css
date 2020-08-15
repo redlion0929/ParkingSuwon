@@ -6,14 +6,15 @@
 
 #map {
     width:100%;
-    height:820px;
+    height:800px;
+    text-align: center;
     margin-top: 10px;
 }
 
 .top {
     background-color: black;
     color:white;
-    position:fixed;
+    position:absolute; //기존 fixed를 absolute로 변환
     left:0;
     top:0;
     height:40px;
@@ -36,3 +37,9 @@ body{
     top:105px;
     left:15px;
 }
+
+@media(max-height:850px) {
+    #map {
+        height:700px;
+    }
+} //미디어쿼리 추가
