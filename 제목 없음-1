@@ -1,11 +1,8 @@
 const getPosBtn=document.querySelector(".getPosition");
 
-var circle = new naver.maps.Circle({
-    map: map,
-    center: new naver.maps.LatLng(37.265686,126.998787),
-    radius:0,
-    fillColor: 'crimson',
-    fillOpacity: 1.0
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(37.265686,126.998787),
+    map: map
 });
 
 function handleSuccess(position) {
@@ -13,14 +10,13 @@ function handleSuccess(position) {
     const lng=position.coords.longitude.toPrecision(10);
     
     map.setCenter(new naver.maps.LatLng(lat,lng));
-    circle.setCenter(new naver.maps.LatLng(lat,lng));
-    circle.setRadius(25);
+    marker.setPosition(new naver.maps.LatLng(lat,lng));
 
 }
 
 function handleError() {
     alert("위치를 받아 올 수 없습니다.");
-    circle.setCenter(new naver.maps.LatLng(37.265686,126.998787));
+    marker.setPosition(new naver.maps.LatLng(37.265686,126.998787));
 }
 
 function askForCoords() {
