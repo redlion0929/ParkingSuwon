@@ -8,7 +8,7 @@ function handleSubmit(event) {
     event.preventDefault();
     address=inputAddress.value;
     inputAddress.value="";
-    ps.keywordSearch(address.placesSearchCB);
+    ps.keywordSearch(address,placesSearchCB);
 }
 
 map.setCursor('pointer');
@@ -16,6 +16,7 @@ map.setCursor('pointer');
 
 function placesSearchCB (data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
+        map.setCenter(data[i].y, data[i].x);
 
         for (var i=0; i<data.length; i++) {
             showMarker(data[i].y, data[i].x);
